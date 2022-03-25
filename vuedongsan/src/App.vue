@@ -60,7 +60,7 @@ div {
 </style>
 
 <template>
-    <ModalBanner :원룸들="원룸들" :누른거="누른거" :모달창열렸니="모달창열렸니" />
+    <ModalBanner :원룸들="원룸들" :누른거="누른거" :모달창열렸니="모달창열렸니" @closeModal="모달창열렸니 = false" />
     
     <!-- nav -->
     <div class="menu">
@@ -190,9 +190,7 @@ export default {
 
     components: {
         DiscountBanner: DiscountBanner,
-        // eslint-disable-next-line vue/no-unused-components
         ModalBanner: ModalBanner,
-        // eslint-disable-next-line vue/no-unused-components
         CardBox: CardBox,
     },
 };
