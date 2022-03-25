@@ -15,5 +15,13 @@
       "dom.iterable",
       "scripthost"
     ]
-  }
+  },
+
+  //
+// "vue/no-unused-components": ["error", {
+//   "ignoreWhenBindingPresent": true
+// }]
+ 
 }
+
+
