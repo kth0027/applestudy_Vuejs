@@ -1,11 +1,9 @@
 <template>
-  <dir>홈</dir>
+  <div>코멘트뷰</div>
 </template>
 
 <script>
 export default {
-  name: 'HomeBox',
-
 
 }
 </script>

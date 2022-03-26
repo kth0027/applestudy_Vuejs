@@ -3,12 +3,12 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+              <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
+                    <router-link to="/home"> <a class="nav-link active" aria-current="page" href="#">Home</a></router-link>
+                        <a class="nav-link" href="#">Features</a>
                     <a class="nav-link" href="#">Pricing</a>
                     <a class="nav-link disabled">Disabled</a>
                 </div>
@@ -20,10 +20,13 @@
         <h5>React 개발자의 블로그입니다</h5>
         <p>- Vue로 만들었음 -</p>
     </div>
-
-    <router-link to="/">홈페이지</router-link>
-    <router-link to="/list">리스트페이지</router-link>
-    <router-view :블로그글="블로그글"></router-view>
+    
+    <router-link class="mx-2" to="/home">홈페이지</router-link>
+    <router-link class="mx-2" to="/list">리스트페이지</router-link>
+    <div class="mt-4">
+        <router-view :블로그글="블로그글"></router-view>
+    </div>
+    
     
     <!-- <ListBox :블로그글="블로그글" /> -->
 </template>
