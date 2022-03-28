@@ -9,6 +9,7 @@ let app = createApp(App)
 app.config.globalProperties.emitter = emitter;
 
 import store from './store.js'
+import './registerServiceWorker'
 
 
 createApp(App).use(store).mount('#app')

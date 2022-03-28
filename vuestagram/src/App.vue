@@ -56,46 +56,38 @@
 import ContainerBox from "./components/ContainerBox.vue";
 import postdata from "./assets/postdata";
 import axios from "axios";
-
 axios.post();
-
 export default {
   name: "App",
-
   components: {
     Container: ContainerBox,
   },
-
   data() {
     return {
+      step: 3, // 1 or 2 일때 다른걸 보여준다      
       게시물: postdata,
       더보기: 0,
-      step: 0, // 1 or 2 일때 다른걸 보여준다
       이미지: "",
       작성한글: "",
     };
   },
-
   mounted() {
-    this.emitter.on("박스클릭함", (a) => {
+    this.emitter.on("박스클릭함", (a)=>{
       this.선택한필터 = a;
     });
   },
-
   methods: {
     more() {
       // post 요청하기
       // axios.post('URL', {name : 'kim'}).then().catch((err) => {
       //   err
       // }
-
       // axios.get('https://codingapple1.github.io/vue/more0.json')
       // .then((결과)=>{
       //   console.log(결과.data);
       //   // push = array에 추가해줘라.
       //   this.게시물.push(결과.data);
       // })
-
       // 더보기 사용
       axios
         .get(`https://codingapple1.github.io/vue/more${this.더보기}.json`)
@@ -104,7 +96,6 @@ export default {
           this.더보기++;
         });
     },
-
     upload(e) {
       let 파일 = e.target.files;
       let url = URL.createObjectURL(파일[0]); // URL 생성후 변수 지정 저장
@@ -112,7 +103,6 @@ export default {
       this.이미지 = url;
       this.step++;
     },
-
     publish() {
       var 내게시물 = {
         name: "김태호",
@@ -123,7 +113,7 @@ export default {
         liked: false,
         content: this.작성한글,
         // filter: "perpetua",
-        filter: this.내가선택한필터,
+        filter: this.선택한필터,
       };
       this.게시물.unshift(내게시물);
       this.step = 0;

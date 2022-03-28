@@ -30,9 +30,7 @@
 
 <script>
 export default {
-    props: {
-        게시물: Object,
-    },
+   
 };
 </script>
 
